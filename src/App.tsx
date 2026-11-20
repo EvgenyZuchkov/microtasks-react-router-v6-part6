@@ -7,7 +7,7 @@ import {Error404} from "./components/pages/Error404";
 import {S} from './components/pages/_styles';
 import {Model} from "./components/pages/Model.tsx";
 
-const PATH = {
+export const PATH = {
   PAGE1: '/adidas',
   PAGE2: '/puma',
   PAGE3: '/abibas',
@@ -33,6 +33,8 @@ export const App = ()=> {
             <Route path={PATH.PAGE3} element={<Abibas/>}/>
 
             <Route path={'/adidas/:id'} element={<Model/>}/>
+            <Route path={'/puma/:id'} element={<Model/>}/>
+            <Route path={'/abibas/:id'} element={<Model/>}/>
 
             <Route path={'/*'} element={<Error404/>}/>
           </Routes>

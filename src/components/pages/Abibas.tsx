@@ -1,7 +1,50 @@
+import adidasModel1 from "../../assets/AdiFOM_TRXN_Shoes_Black_IG7453_01_standard.webp";
+import adidasModel2 from "../../assets/Superstar_XLG_Shoes_Black_IG9777_01_standard.webp";
+import adidasModel3
+    from "../../assets/PostMove_Mid_Cloudfoam_Super_Lifestyle_Basketball_Mid_Classic_Shoes_Black_GY7163_01_standard.webp";
+import {Link} from "react-router-dom";
+
+export type AbibasItem = {
+    id: number;
+    model: string;
+    collection: string;
+    price: string;
+    picture: string;
+}
+export const AbibasArr: AbibasItem[] = [
+    {
+        id: 0,
+        model: 'ADIDAS ADIFOM TRXN',
+        collection: 'new collection1',
+        price: '100200$',
+        picture: adidasModel1,
+
+    },
+    {
+        id: 1,
+        model: 'ADIDAS ADIFOM SUPER',
+        collection: 'new collection22',
+        price: '200300$',
+        picture: adidasModel2
+    },
+    {
+        id: 2,
+        model: 'ADIDAS SUPER SUPERSKI',
+        collection: 'new collection333',
+        price: '300400$',
+        picture: adidasModel3
+    }
+]
+
 export const Abibas = () => {
     return (
         <div>
             <h2> ABIBAS</h2>
+            {AbibasArr.map((el)=>(
+                <Link to={`/abibas/${el.id}`} key={el.id}>
+                    <img src={el.picture} alt={el.model} style={{ width: '200px', height: '200px', margin: '10px' }} />
+                </Link>
+            ))}
             <p>
                 What is Lorem Ipsum?
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
